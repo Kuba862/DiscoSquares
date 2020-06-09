@@ -1,0 +1,75 @@
+/* 
+- animacja trwa 1s;
+- ostatni div trwa 3s; ma mieć odwrócony kierunek (reverse);
+kolory: lewy górny róg: czarny; prawy górny róg: czerwony; 
+prawy dolny róg: zielony i lewy dolny róg: niebieski;
+- tylko jedna animacja
+- opóźnienie .2s
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    height: 30px;
+    width: 30px;
+    background-color: rgb(0,0,0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: disco 1s linear infinite;
+}
+
+div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+div:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+div:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+div:nth-child(6) {
+    animation-direction: reverse;
+    animation-duration: 3s;
+}
+
+
+@keyframes disco {
+    0% {
+        top: 0;
+        left: 0;
+        background-color: black;
+    }
+    25% {
+        top: 0;
+        left: calc(100% - 30px);
+        background-color: rgb(0, 255, 55);
+    }
+    50% {
+        top: calc(100% - 30px);
+        left: calc(100% - 30px);
+        background-color: rgb(255, 0, 140);
+    }
+    75% {
+        top: calc(100% - 30px);
+        left: 0;
+        background-color: rgb(255, 217, 0);
+    }
+    100% {
+        top: 0;
+        left: 0;
+        background-color: rgb(0, 4, 255);
+    }
+}
+
+
+
